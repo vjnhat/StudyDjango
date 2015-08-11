@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'framgia/css/blog.css' %}" />
+<div id="main">
+        
+    <h2>{{ blog.blog_title }}</h2>
+
+    <span class="meta">Posted by <strong>Russell Keith-Magee</strong> on {{ blog.blog_date }}</span>
+
+    <p>{{ blog.blog_content }}</p>
+
+</div>
+{%endblock%}

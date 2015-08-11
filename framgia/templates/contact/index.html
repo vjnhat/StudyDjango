@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{%block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'framgia/css/contact.css' %}" />
+<script type="text/javascript">
+
+    function contact_post() {
+        console.log("create post is working!") // sanity check
+        $.ajax({
+            url : "framgia/contact_post/", // the endpoint
+            type : "POST", // http method
+            data : { name : $('#name').val(),
+                     email: $('#email').val(),
+                     telephone: $('#telephone').val(),
+                     message:$('#message').val()
+                   }, // data sent with the post request
+
+            // handle a successful response
+            success : function(json) {
+                alert("OK");
+                console.log(json); // log the returned json to the console
+                console.log("success"); // another sanity check
+            },
+
+            // handle a non-successful response
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+    };
+</script>
+
+<div id="contact-form" class="clearfix">
+    <form method="post" name="example form" >
+        <h1>CONTACT</h1>
+        {% csrf_token %}
+        <label for="name">Name: <span class="required">*</span></label>
+        <input type="text" id="name" name="name" value="" placeholder="Phuc Le Cong" required="required" autofocus="autofocus" />
+
+        <label for="email">Email Address: <span class="required">*</span></label>
+        <input type="email" id="email" name="email" value="" placeholder="phuclc@example.com" required="required" />
+
+        <label for="telephone">Telephone: </label>
+        <input type="tel" id="telephone" name="telephone" value="" />
+
+        <label for="message">Message: <span class="required">*</span></label>
+        <textarea id="message" name="message" placeholder="Your message must be greater than 20 charcters" required="required" data-minlength="20"></textarea>
+
+        <script type="text/javascript">
+
+
+        </script>
+        <input type="button" value="Send!" id="submit-button" onclick="contact_post()" />
+        <p id="req-field-desc"><span class="required">*</span> indicates a required field</p>
+    </form>
+</div>
+{%endblock%}

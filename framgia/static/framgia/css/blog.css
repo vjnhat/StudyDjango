@@ -1,0 +1,61 @@
+#main {
+    border: medium none;
+    box-shadow: 0px 0px 0px 0px #FFF, 0px 0px 0px 0px #FFF, -460px 0px 0px 0px #FFF, -1000px 0px 0px 0px #FFF, 0px 600px 0px 0px #FFF, -460px 600px 0px 0px #FFF;
+    padding-left: 0px;
+    width: 62%;
+    padding-right: 4%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #20AA76;
+    text-decoration: none;
+}
+
+#main h2{
+    color: #20AA76;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "Roboto",Corbel,Avenir,"Lucida Grande","Lucida Sans",sans-serif;
+    text-transform: none
+    margin-bottom: 5px;
+}
+.list-news {
+    list-style: outside none none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list-news li:first-child {
+    margin-top: 0px;
+    padding-top: 0px;
+    border-bottom: 1px solid #CFE3DC;
+}
+
+.list-news h2 {
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    font-family: "Roboto",Corbel,Avenir,"Lucida Grande","Lucida Sans",sans-serif;
+    text-align: left;
+    text-transform: none;
+}
+
+p {
+    margin: 1em 0px;
+}
+
+.list-news .meta, .list-news .list-links dd, .list-links .list-news dd, .list-news .search-links dd, .search-links .list-news dd {
+    margin-top: 10px;
+    color: #859D94;
+}
+
+.link-readmore {
+    color: #20AA76;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0px;
+    font-weight: 600;
+    text-transform: uppercase;
+}

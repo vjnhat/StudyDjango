@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Simply</title>
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'framgia/css/style.css' %}" />
+    {% load url from future %}
+</head>
+
+<body>
+
+	<header>
+        <div class="wrapper">
+            <h1>Simply<span class="color">.</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index'%}">Home</a></li>
+                    <li><a href="#features">Portfolio</a></li>
+                    <li><a href="{% url 'blog'%}">Blog</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+	{%block content %}{%endblock%}
+
+	<footer>
+        <div class="wrapper">
+            <div id="footer-info">
+                <p>Copyright 2015 CompanyName. All rights reserved.</p>
+                <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+            </div>
+            <div id="footer-links">
+                <ul>
+                    <li><h5>Company</h5></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Meet The Team</a></li>
+                    <li><a href="#">What We Do</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+                <ul>
+                    <li><h5>Company</h5></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Meet The Team</a></li>
+                    <li><a href="#">What We Do</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{%block content %}
+{% load url from future %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'framgia/css/blog.css' %}" />
+<div id="main">
+    {% if latest_blog_list %}
+        <ul class="list-news">
+             {% for blog in latest_blog_list %}
+                <li>
+                    <h2>
+                        <a href="{% url 'blog_detail' blog.id %}">{{ blog.blog_title }}</a>
+                    </h2>
+
+                    <span class="meta">
+                        Posted by <strong>Russell Keith-Magee</strong> on {{ blog.blog_date }}
+                    </span>
+
+                    <p>{{ blog.blog_summary  }}</p>
+                    <a class="link-readmore" href="{% url 'blog_detail' blog.id %}">Read more</a>
+                </li>
+             {% endfor %}
+        </ul>
+    {% else %}
+        <p>No blog are available.</p>
+    {% endif %}
+
+</div>
+{%endblock%}
